@@ -1,0 +1,106 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body{
+	color: #000;
+}
+
+.dialog__content{
+	padding: 0em!important;
+}
+
+.dialog__content .dialog-header{
+	padding: 0.8em 1em;
+	border-bottom: 1px solid #dfdfdf;
+}
+
+.dialog__content .dialog-title{
+	margin: 0em;
+	text-align: left;
+	font-weight: normal;
+}
+
+
+.dialog__content .dialog-content{
+	padding: 0.8em 1em;
+	text-align: left;
+}
+
+.dialog__content .dialog-content .item{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.dialog__content .dialog-content .control-label{
+	display: block;
+    float: left;
+    height: 35px;
+    line-height: 35px;
+    margin-right: 10px;
+    text-align: right;
+    width: 160px;
+}
+
+.dialog__content .dialog-content input{
+	height: 35px;
+    line-height: 35px;
+    border: 1px solid #dfdfdf;
+    padding: 2px 5px;
+    width: 250px;
+    transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+}
+
+.dialog__content .dialog-content input:focus{
+	border: 1px solid #999;
+}
+
+
+.dialog__content .dialog-footer{
+	background: none repeat scroll 0 0 #F5F5F5;
+    padding: 0.7em 1em;
+    text-align: right;
+}
+
+
+.dialog__content .dialog-footer .action{
+	padding: 0.5em 1.5em;
+	background-color: #E5E5E5;
+	color: #333333;
+	font-weight: normal;
+	font-size: 15px;
+	transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+}
+
+
+
+.dialog__content .dialog-footer .action:hover{
+	background-color: #D8D8D8!important;
+}
+
+.dialog__content .dialog-footer .blue{
+	background-color: #4D90FE;
+	color: #fff!important;
+	margin-right: 10px;
+}
+
+.dialog__content .dialog-footer .blue:hover{
+	background-color: #0362FD!important;
+	color: #fff!important;
+}
+
+
+
+
+
+
+
+
+
+

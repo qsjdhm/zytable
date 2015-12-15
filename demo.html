@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Document1</title>
+		
+		<link rel="stylesheet" type="text/css" href="plugs/bootstrap-ui/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="plugs/button/css/component.css">
+		<link rel="stylesheet" type="text/css" href="plugs/checkbox/style.css">
+		<link rel="stylesheet" type="text/css" href="css/table.css">
+		
+		<!-- 加载zyPopup弹出层的样式 -->
+		<link rel="stylesheet" type="text/css" href="plugs/zyPopup/plug/DialogEffects/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="plugs/zyPopup/plug/DialogEffects/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="plugs/zyPopup/plug/DialogEffects/css/dialog.css" />
+		<link rel="stylesheet" type="text/css" href="plugs/zyPopup/plug/DialogEffects/css/dialog-sandra.css" />
+		<link rel="stylesheet" type="text/css" href="plugs/zyPopup/css/zyPopup.css" />
+		
+		
+		<!-- 引用公共JS -->
+		<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="plugs/paging/js/jquery.pagination.js"></script>
+		
+		<!-- 加载zyPopup弹出层的脚本 -->
+		<script type="text/javascript" src="plugs/zyPopup/plug/DialogEffects/js/modernizr.custom.js"></script>
+		<script type="text/javascript" src="plugs/zyPopup/plug/DialogEffects/js/classie.js"></script>
+		<script type="text/javascript" src="plugs/zyPopup/plug/DialogEffects/js/dialogFx.js"></script>
+		<script type="text/javascript" src="plugs/zyPopup/js/zyPopup.js"></script>
+		
+		<script type="text/javascript" src="js/table.js"></script> 
+		
+		<script type="text/javascript">
+			$(function() {
+				// 初始化插件
+				$(".table").table({
+					"width"      : 500,
+					"height"     : 250,
+					"field"      : [{"id":"ID", "name":"ID", "width":80},{"id":"NAME", "name":"名字", "width":120},{"id":"AGE", "name":"年龄", "width":70}],
+					//"adaptive"   : true, // 数据源字段自适应宽度方式
+					"adaptive"   : false, // 数据源字段自适应宽度方式
+					"pattern"    : false, // 模式   true:字段方式获取数据   false:普通添加方式获取数据
+					"example"    : false,  // 实例   当前创建的是否是model中的实例
+					"check"      : true,  // 全选
+					"number"     : true,  // 序号
+					"edit"       : true,  // 编辑
+					"del"        : true,  // 删除
+					"allDel"     : true,  // 全部删除
+					"filter"     : true,  // 过滤
+					"paging"     : true,  // 分页条
+					"zebra"      : true,  // 斑马线
+					"dataTotal"  : 30,     // 数据总个数
+					"rowsPerPage": 10,     // 一页多少行数据
+					"pagingComplete": function(nNowPage){  // 翻页的回调方法
+						console.info("用户定义翻页回调:");
+						console.info(nNowPage);
+
+						// 翻页添加数据
+						var data = [];
+						for(var i=nNowPage*10+1; i<=nNowPage*10+10; i++){
+							if(i!=nNowPage*10+10){
+								data.push({"ID":"000"+i,"NAME":"张三"+i+"号","AGE":(20+i)+"岁"});
+							}else{
+								data.push({"ID":"000"+i,"NAME":"张三"+i+"号","AGE":(20+i)+"岁"});
+							}
+							
+						}
+						$(".table").table("addData", data);
+					},
+					"delComplete": function(aRowId){  // 删除数据的回调方法
+						console.info("用户定义删除回调:");
+						console.info(aRowId);
+					},
+					"editComplete": function(afterData, beforeData){  // 编辑数据的回调方法
+						console.info("用户定义编辑回调:");
+						console.info(afterData);
+						console.info(beforeData);
+					}
+				});
+
+				// 初始化添加数据
+				var data = [];
+				for(var i=1; i<=10; i++){
+					if(i!=10){
+						data.push({"ID":"000"+i,"NAME":"张三"+i+"号","AGE":(20+i)+"岁"});
+					}else{
+						data.push({"ID":"000"+i,"NAME":"张三"+i+"号","AGE":(20+i)+"岁"});
+					}
+					
+				}
+				$(".table").table("addData", data);
+			});
+		</script>
+	</head>
+	<body>
+		<div style="width:500px;height:340px;position: absolute;left: 400px;top: 100px;">
+			<div class="table"></div>
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
+
