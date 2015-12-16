@@ -181,12 +181,16 @@
 /* 分页 */
 
 
-
+.btn-3e:after{
+    z-index: 0;
+}
 
 
 .table .zebra{
 	background: #F9F9F9;
 }
 
-
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+    z-index: 0;
+}
 
